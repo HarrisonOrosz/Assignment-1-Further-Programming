@@ -2,8 +2,8 @@ package FPAssignment1;
 import java.util.ArrayList;
 public abstract class MenuState {
     String menuTitle;
-    ArrayList<MenuStateNamePair> menuOptions = new ArrayList<>();
-    int numOptions;
+    ArrayList<SelectableOption> options = new ArrayList<>();
+    
     
   
     public String GetMenuTitle(){
@@ -12,16 +12,15 @@ public abstract class MenuState {
     
     public void PrintMenuOptions(){
         System.out.println(menuTitle);
-        for (int i = 0; i < menuOptions.size(); i++) {
+        for (int i = 0; i < options.size(); i++) {
             
             int menuNumber = i + 1;
-            System.out.println(menuNumber + ". " + menuOptions.get(i).GetMenuName());
+            System.out.println(menuNumber + ". " + options.get(i).GetNameInMenu());
         }
        
     }
-    public void AddMenuOption(){
-        MenuStateNamePair newMenuOption = new MenuStateNamePair();
-        menuOptions.
+    public  void AddMenuOption(){
+        
     }
     
 }

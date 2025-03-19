@@ -27,7 +27,7 @@ public class Event{
 		return isOnline;
 	}
 
-	public Tuple PurchaseTickets(){
+	public void  PurchaseTickets(){
 		Scanner scanner = new Scanner(System.in);
 		boolean buyingOnline = false;
 		if(isOnline){
@@ -53,7 +53,9 @@ public class Event{
 			seatsAvailable -= Integer.parseInt(quantityString);
 		}
 		System.out.println("Going back to main menu");
-		return new Tuple<>(this, Integer.parseInt(quantityString));
+		Main.ChangeMenuState(Main.mainMenu);
+		Main.eventTicketQuanities.add(new Tuple<>(this, Integer.valueOf(quantityString)));
+		
 		
 	}
 	

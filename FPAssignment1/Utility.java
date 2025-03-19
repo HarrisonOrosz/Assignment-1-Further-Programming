@@ -2,7 +2,7 @@ package FPAssignment1;
 public  class Utility {
     public static boolean isNumerical(String str){
         try {
-           return str.chars().allMatch(Character::isDigit);
+            return str.chars().allMatch(Character::isDigit);
             
         } catch (Exception e) {
             return false;
@@ -24,5 +24,11 @@ public  class Utility {
         }catch(NumberFormatException e){
             return false;
         }
+    }
+    public static boolean isValidOption(String str, MenuState menu){
+        if(!isInt(str)) return false;
+        int strAsInt = Integer.parseInt(str);
+        if(strAsInt <= 0 || strAsInt > menu.options.size())return false;
+        return true;
     }
 }
